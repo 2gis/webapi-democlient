@@ -1,0 +1,617 @@
+.left { float: left; }
+.right { float: right; }
+
+a {
+    color: #009CCE;
+}
+
+.trunk {
+    margin-right: auto;
+    margin-left: auto;
+    width: 913px;
+    padding-left: 50px;
+    color: #666666;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+.search {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    width: 953px;
+}
+.search-tabs{
+    margin: 0 20px 0 60px;
+    height: 26px;
+    line-height: 26px;
+}
+.search-tabs li{
+    float: left;
+    padding: 0 10px;
+}
+.search-tabs .active{
+    behavior: url('./css/PIE.htc');
+    background-color: #dce1e6;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+}
+.search-tabs .active .pseudo{
+    border: 0;
+    color: #666;
+}
+.search css3-container{
+    z-index: 0!important;
+}
+.search-wrapper{
+    behavior: url('./css/PIE.htc');
+    background: url(../images/sprite.png) repeat-x 0 -72px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    height: 42px;
+    position: relative;
+    z-index: 1;
+}
+.search-organizations .geoobjects,
+.search-geoobjects .organizations,
+.search-wrapper .bycoordinates{
+    display: none;
+}
+.search-form {
+    padding: 10px 0 0 30px;
+}
+.search-form .cell{
+    float: left;
+    display: inline;
+    margin-right: 30px;
+    position: relative;
+    line-height: 18px;
+}
+.search-form .label{
+    color: #fff;
+    font-size: 18px;
+    vertical-align: top;
+}
+.search-form .placeholder{
+    color: #a5acb2;
+    font-size: 12px;
+    position: absolute;
+    margin: 1px 0 0 6px;
+    line-height: 20px;
+}
+.search-form .tip{
+    color: #a5acb2;
+    font-size: 12px;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    white-space: nowrap;
+}
+.search-form .change-method{
+    font-size: 12px;
+    position: absolute;
+    top: -28px;
+    line-height: 1;
+    white-space: nowrap;
+    margin-left: 76px;
+    left: 0;
+}
+.old-ie .search-form .change-method{
+    margin-left: 79px;
+}
+.search-form .where .change-method{
+    margin-left: 40px;
+}
+.old-ie .search-form .where .change-method{
+    margin-left: 43px;
+}
+.is-working-now{
+    color:#009cce;
+    font-size: 12px;
+    position: absolute;
+    left: 280px;
+    top: -20px;
+    white-space: nowrap;
+}
+.is-working-now input{
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+}
+.is-working-now label{
+    vertical-align: middle;
+}
+.search-form .submit{
+    behavior: url('./css/PIE.htc');
+    background: url(../images/sprite.png) repeat-x 0 -114px;
+    border: 1px solid #609500;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #222;
+    cursor: pointer;
+    font-size: 15px;
+    width: 64px;
+    height: 26px;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    margin: -2px 0 0 -24px;
+    position: relative;
+}
+.search-form .textfield{
+    border: 1px solid #a5acb2;
+    font-size: 12px;
+    padding: 3px 5px;
+    height: 14px;
+    vertical-align: middle;
+    width: 58px;
+}
+.what .textfield{
+    width: 524px;
+}
+.bycoordinates .what .textfield{
+    width: 276px;
+}
+.search-form.geoobjects .what .textfield{
+    width: 797px;
+}
+.search-form .where .textfield{
+    width: 191px;
+}
+.search-form .latitude .textfield{
+    width: 68px;
+}
+.search-form .longitude .textfield{
+    width: 68px;
+}
+.search-form .radius .textfield{
+    width: 38px;
+}
+.content{
+    padding-left: 30px;
+    width: 923px;
+}
+
+.results-head{
+    margin: 0 0 15px;
+}
+.results-head h1{
+    color: #111;
+    font-size: 22px;
+    margin: 0 0 5px;
+}
+.results-head .founded{
+    font-size: 15px;
+    line-height: 1;
+}
+.results{
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    margin: 20px 0;
+    padding: 10px 0 5px;
+}
+.results h1,
+.results h2,
+.results h3,
+.results h4,
+.results h5,
+.results h6 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.results h2.title {
+    margin: 0;
+}
+
+.results a {
+    color: #009CCE;
+}
+.results .sorting{
+    font-size: 12px;
+    line-height: 23px;
+    margin: 0 0 20px -8px;
+}
+.results .sorting dt,
+.results .sorting dd{
+    float: left;
+    padding: 0 8px;
+}
+.results .sorting dt{
+    color: #a5acb2;
+}
+.results .sorting dd{
+    color: #009cce;
+}
+.results .sorting .active{
+    behavior: url('./css/PIE.htc');
+    background-color: #eff9d1;
+    color: #666;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.results .sorting .active a{
+    color: #666;
+    cursor: default;
+    border: 0;
+}
+.results-sidebar,
+.firm-sidebar{
+    float: right;
+    width: 308px;
+    margin-bottom: 20px;
+}
+.results-map-wrapper{
+    /*width: 308px;
+    height: 308px;*/    
+    position: relative;
+    margin: 0 0 5px;
+}
+.results-map{
+    height: 308px;
+    width: 308px;
+    position: relative;
+}
+
+.results-content,
+.firm-content{
+    float: left;
+    width: 586px;
+}
+.old-ie .results-geo{
+    margin-bottom: -20px;
+}
+.results-geo-row{
+    padding: 0 0 20px;
+    margin: 0 0 0 20px;
+    line-height: 18px;
+    position: relative;
+}
+.results-geo .type{
+    color: #a5acb2;
+    font-size: 12px;
+}
+.results-geo .results-icon {
+    behavior: url('./css/PIE.htc');
+    -pie-png-fix: true;
+    background-image: url(../images/sprite.png);
+    position: absolute;
+    left: -19px;
+    top: 1px;
+    width: 15px;
+    height: 13px;
+    font-size: 0;
+}
+.ie6 .results-geo .results-icon {
+    top: -1px;
+}
+.ie7 .results-geo .results-icon {
+    top: 0px;
+}
+.results-geo .street-icon { background-position: 0 -211px; }
+.results-geo .building-icon { background-position: -15px -211px; }
+.results-geo .place-icon { background-position: -30px -211px; }
+.results-geo .busstation-icon { background-position: -45px -211px; }
+.results-geo .sight-icon { background-position: -60px -211px; width: 12px; }
+.results-geo .city-icon { background-position: -74px -211px; width: 18px; }
+
+.pager{
+    margin: 25px 0;
+}
+.pager li{
+    font-weight: bold;
+    display: inline;
+    margin-right: 8px;
+}
+.pager a{
+    font-weight: normal;
+}
+.pager a.ctrl{
+    font-size: 12px;
+    color: #666;
+}
+
+.firm-head{
+    color: #111;
+    font-size: 22px;
+    margin: 0 0 25px;
+}
+.firm-head .rubric{
+    color:#a5acb2;
+    font-size: 12px;
+}
+.firm-head .rubric a{
+    color:#a5acb2;
+    text-decoration: none;
+}
+.firm-head .rubric a:hover{
+    text-decoration: underline;
+}
+
+.firm-card .keywords{
+    margin: 0 0 25px;
+}
+.firm-card .advanced-info{
+    border-top: 1px solid #e5e5e5;
+    padding: 20px 0 0;
+    line-height: 20px;
+}
+.firm-card .advanced-info ul{
+    margin-bottom: 13px;
+}
+.address-info .address{
+    color:#111;
+}
+.phone-info li,
+.web-info li,
+.wh-info{
+    margin-left: 19px;
+    position: relative;
+}
+.wh-info sup{
+    font-size: 9px;
+    vertical-align: baseline;
+    position: relative;
+    top: -5px;
+}
+.payment-methods li{
+    display: inline;
+    margin-right: 11px;
+}
+.skype-icon,
+.icq-icon,
+.jabber-icon,
+.fax-icon,
+.phone-icon,
+.site-icon,
+.mail-icon,
+.wh-icon,
+.ames-icon,
+.goldcrown-icon,
+.dinersclub-icon,
+.internet-icon,
+.non-cash-icon,
+.americanexpress-icon,
+.cash-icon,
+.visa-icon,
+.mastercard-icon{
+    behavior: url('./css/PIE.htc');
+    -pie-png-fix: true;
+    background-image: url(../images/sprite.png);
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    overflow: hidden;
+    cursor: default;
+    *display: inline;
+    zoom: 1;
+}
+.skype-icon,
+.icq-icon,
+.jabber-icon,
+.fax-icon,
+.phone-icon,
+.site-icon,
+.mail-icon,
+.wh-icon{
+    position: absolute;
+    left: -19px;
+    top: 2px;
+}
+.ie6 .skype-icon,
+.ie6 .icq-icon,
+.ie6 .jabber-icon,
+.ie6 .fax-icon,
+.ie6 .phone-icon,
+.ie6 .site-icon,
+.ie6 .mail-icon,
+.ie6 .wh-icon{
+    top: -2px;
+}
+.ie7 .skype-icon,
+.ie7 .icq-icon,
+.ie7 .jabber-icon,
+.ie7 .fax-icon,
+.ie7 .phone-icon,
+.ie7 .site-icon,
+.ie7 .mail-icon,
+.ie7 .wh-icon{
+    top: 0;
+}
+.skype-icon{ background-position: -45px -374px; }
+.icq-icon{ background-position: -30px -374px;}
+.jabber-icon{ background-position: -14px -374px; width: 16px; }
+.fax-icon{ background-position: 0 -374px; width: 14px; }
+.phone-icon{ background-position: 0 -195px; }
+.site-icon{ background-position: -15px -195px; }
+.mail-icon{ background-position: -30px -195px; }
+.wh-icon{ background-position: -45px -195px; }
+.cash-icon{ background-position: -60px -195px; width: 14px; }
+.visa-icon{ background-position: -74px -195px; width: 16px; }
+.mastercard-icon{ background-position: -90px -195px; width: 16px; }
+.non-cash-icon{ background-position: -106px -195px; width: 14px; }
+.internet-icon{ background-position: -120px -195px; width: 14px; }
+.dinersclub-icon{ background-position: -134px -195px; width: 16px; }
+.goldcrown-icon{ background-position: -120px -248px; width: 16px; }
+.americanexpress-icon{ background-position: -120px -272px; width: 16px; }
+
+.wh-week{
+    display: none;
+}
+.show-weekly-wh,
+.show-today-wh{
+    color:#a5acb2;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.firm-card{
+    margin-bottom: 30px;
+}
+
+.firm-card .description{
+    behavior: url('./css/PIE.htc');
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    margin-left: -16px;
+    padding: 10px 15px 1px;
+    line-height: 20px;
+}
+.firm-card .description p{
+    margin-bottom: 15px;
+}
+
+.dym{
+    margin: 0 0 15px;
+    line-height: 16px;
+}
+.dym-column{
+    float: left;
+    width: 278px;
+    display: inline;
+    margin-right: 30px;
+}
+.dym-list li{
+    list-style: disc;
+    margin: 5px 0 0 50px;
+}
+.dym-list .keywords{
+    color: #a5acb2;
+    font-size: 11px;
+}
+
+.adverts {
+    margin: 0 0 25px -10px;
+    font-weight: bold;
+}
+
+
+.adverts .description {
+    padding: 0px 0px;
+}
+
+.adverts li{
+    behavior: url('./css/PIE.htc');
+    -pie-png-fix: true;
+    background: #fff8df url(../images/open_arrow.png) no-repeat 100% 50%;
+    margin: 0 0 2px;
+    position: relative;
+}
+.ie7 .adverts li{
+    margin-bottom: -1px;
+}
+.adverts .advert-link{
+    padding: 6px 47px 8px 30px;
+    height: 1%;
+    display: block;
+    color:#666;
+    text-decoration: none;
+    position: relative;
+}
+.adverts .title{
+    font-size: 16px;
+    color:#111;
+}
+
+.advert-icon{
+    behavior: url('./css/PIE.htc');
+    -pie-png-fix: true;
+    background: url(../images/sprite.png) -60px -138px;
+    height: 17px;
+    width: 17px;
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    vertical-align: middle;
+}
+
+.adverts .advert-icon{
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    float: left;
+}
+
+.old-ie .results-org{
+    margin-bottom: -25px;
+}
+.results-org-row{
+    margin: 0 0 25px 20px;
+    line-height: 20px;
+    position: relative;
+}
+.results-org .number{
+    behavior: url('./css/PIE.htc');
+    -pie-png-fix: true;
+    background: url(../images/sprite.png) -30px -138px;
+    position: absolute;
+    left:-20px;
+    top:2px;
+    width: 15px;
+    height: 24px;
+    color:#fff;
+    line-height: 20px;
+    font-size: 9px;
+    text-align: center;
+}
+.results-org .rubrics,
+.results-org .firm-branches{
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0 0;
+}
+.results-org .rubrics li{
+    color:#a5acb2;
+    display: inline;
+}
+.results-org .rubrics a{
+    color:#a5acb2;
+}
+.results-org .title{
+    display: inline-block;
+}
+.old-ie .results-org .title{
+    display: inline;
+    zoom:1;
+}
+
+.adv-comment{
+    behavior: url('./css/PIE.htc');
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    font-size: 12px;
+    padding: 5px 10px;
+    line-height: 15px;
+    margin: 3px 0;
+    height: 1%;
+}
+
+.adv-comment b {
+    font-weight: bold;
+}
+
+.advert-info a{
+    vertical-align: middle;
+}
+
+.fas-msg{
+    color:#969696;
+    font-size: 12px;
+    margin: 15px 0 -15px;
+}
+
+.fas-msg-list{
+    color:#969696;
+    font-size: 12px;
+}
