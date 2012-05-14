@@ -181,11 +181,9 @@
             <?php if((isset($filial->comment) && strlen($filial->comment) > 0) || (isset($filial->article) && strlen($filial->article) > 0)) :?>
                 <div class="description" style="position: relative;">
                     <?php if(isset($filial->comment) && strlen($filial->comment) > 0) :?>
-                        <p>Комментарий:</p>
                         <p><?php echo strip_tags($filial->comment)?></p>
                     <?php endif; ?>
                     <?php if(isset($filial->article) && strlen($filial->article) > 0) :?>
-                        <p>Статья:</p>
                         <p><?php echo strip_tags($filial->article)?><p>
                     <?php endif; ?>
                 </div>
