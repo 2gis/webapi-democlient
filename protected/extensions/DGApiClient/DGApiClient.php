@@ -309,6 +309,7 @@ class DGApiClient extends CApplicationComponent
         $params['key'] = $this->apiKey;
         $params['version'] = $this->apiVersion;
         $params['lang'] = $this->apiLanguage;
+        $params['limit'] = Yii::app()->params['defaultLimit'];
         $params['output'] = ($format == 'xml') ? $format : 'json';
 
         $request = $this->lastRequest = $this->apiUrl . '/' . $service . '?' . http_build_query($params);

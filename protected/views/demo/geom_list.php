@@ -7,7 +7,13 @@ if (isset($geoms->response_code) && $geoms->response_code == 200): ?>
     <?php $this->beginWidget('CHtmlPurifier');?>
         <div class="results-head">
             <?php if (isset($where)): ?>
-                <h1>По названию «<?php echo $where; ?>» найден следующий геообъект:</h1>
+            <h1>По названию «<?php echo $where; ?>»
+                <? if ($geoms->total == 1): ?>
+                    найден следующий геообъект:
+                    <? else: ?>
+                    найдены следующие геообъекты:
+                    <? endif; ?>
+            </h1>
             <?php else: ?>
                 <h1>В точке с координатами <?php echo $lat . ',' . $lon; ?> располагаются следующие геообъекты:</h1>
                 <p class="founded">Всего геообъектов: <?php echo $geoms->total; ?></p>
@@ -19,11 +25,11 @@ if (isset($geoms->response_code) && $geoms->response_code == 200): ?>
         <div class="results-content">
             <ul class="results-geo">
                 <?php foreach ($geoms->result as $key => $geom): ?>
-                    <li class="results-geo-row">
-                        <h2><?php echo $geom->name; ?></h2>
-                        <p class="type"><?php echo Helper::getGeoTypeRussianName($geom->type); ?></p>
-                        <div class="results-icon <?php echo Helper::getGeoTypeIcon($geom->type) ?>"></div>
-                    </li><!-- /row -->
+                <li class="dg-api-geo-objects-row" >
+                    <span class="results-icon <?php echo Helper::getGeoTypeIcon($geom->type) ?>"></span>
+                    <a href="javascript:void(0)" class="dg-api-geo-objects-title" id="results-geo-row<? echo $key; ?>"><?php echo $geom->name; ?></a>
+                    <p class="dg-api-geo-objects-info"><?php echo Helper::getGeoTypeRussianName($geom->type); ?></p>
+                </li><!-- /row -->
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -37,6 +43,7 @@ if (isset($geoms->response_code) && $geoms->response_code == 200): ?>
                     'type' => Helper::getGeoTypeRussianName($geom->type)
                 );
             }
+            $geometries = array_reverse($geometries);
             $this->widget('application.components.widgets.dgMap.DGMap', array('centroid' => $center, 'geometries' => $geometries, 'mapsApiUrl' => Yii::app()->params['mapsApiUrl']));
         ?>
     </div><!-- /results -->

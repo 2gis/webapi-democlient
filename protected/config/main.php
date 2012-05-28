@@ -60,5 +60,6 @@ return array(
     'params' => array(
         'searchMethod' => 'search',
         'mapsApiUrl' => 'http://maps.api.2gis.ru/1.0',
+        'defaultLimit' => 10,
     ),
 );

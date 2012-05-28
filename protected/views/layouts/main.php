@@ -6,6 +6,7 @@
             $cs = Yii::app()->getClientScript();
             $cs->registerCssFile('/css/reset.css');
             $cs->registerCssFile('/css/design.css');
+            $cs->registerCssFile('/css/geo-objects.css');
             $cs->registerScriptFile('/js/jquery-1.7.min.js');
             $cs->registerScriptFile('/js/script.js');
         ?>

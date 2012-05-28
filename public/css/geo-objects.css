@@ -1,0 +1,55 @@
+.dg-api-geo-objects-list{
+    font-size: 14px;
+    margin-left: -30px;
+    position: relative;
+}
+.dg-api-geo-objects-row{
+    line-height: 20px;
+    padding: 10px 10px 10px 50px;
+    position: relative;
+    *zoom: 1;
+}
+.dg-api-geo-objects-selected{
+    padding: 9px 9px 9px 49px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.dg-api-geo-objects-info{
+    margin: 5px 0 0 0;
+}
+.dg-api-geo-objects-title{
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px dotted;
+}
+.dg-api-geo-objects-title:hover{
+    border: none;
+}
+.dg-api-geo-objects-selected .dg-api-geo-objects-title{
+    border: none;
+    font-weight: bold;
+    color: #70747a;
+}
+.dg-api-geo-objects-list .results-icon{
+    left: 25px;
+    top: 13px !important;
+    display: block;
+}
+
+/* мдоификатор для результатов поиска */
+.dg-api-geo-objects-results{
+    padding-top: 20px;
+}
+.dg-api-geo-objects-results .results-content{
+    width: 433px;
+}
+.dg-api-geo-objects-results .results-sidebar{
+    width:470px;
+}
+.dg-api-geo-objects-results .results-map-wrapper{
+    margin-bottom: 20px;
+}
