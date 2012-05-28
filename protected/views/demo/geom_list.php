@@ -43,7 +43,6 @@ if (isset($geoms->response_code) && $geoms->response_code == 200): ?>
                     'type' => Helper::getGeoTypeRussianName($geom->type)
                 );
             }
-            $geometries = array_reverse($geometries);
             $this->widget('application.components.widgets.dgMap.DGMap', array('centroid' => $center, 'geometries' => $geometries, 'mapsApiUrl' => Yii::app()->params['mapsApiUrl']));
         ?>
     </div><!-- /results -->

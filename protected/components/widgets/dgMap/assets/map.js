@@ -47,18 +47,25 @@ DG.autoload(function () {
         style.strokeWidth = 3;
         style.fillColor = "#ee9900";
         style.fillOpacity = 0.2;
-                
-        for(var i = 0; i < geometries.length; i++) {
+
+        var lim = geometries.length - 1;
+        for(var i = lim; i > -1 ; i--) {
             if (DG.WKTParser.getObjectType(geometries[i].wkt) == 'POINT') {
-                var point = DG.WKTParser.getObject(geometries[i].wkt);
+                point = DG.WKTParser.getObject(geometries[i].wkt);
                 addMarker(myMap, point.getPosition(), geometries[i].name);
+                geometry = null;
             } else {
                 var geometry = DG.WKTParser.getObject(geometries[i].wkt);
-                
                 myMap.geometries.add(geometry);
                 geometry.setStyle(style);
-                myMap.setBounds(geometry.getBounds());
+
             }
+        }
+
+        if (DG.WKTParser.getObjectType(geometries[0].wkt) == 'POINT' ) {
+            myMap.setCenter(new DG.GeoPoint(point.lon,point.lat), 17);
+        } else {
+            myMap.setBounds(geometry.getBounds());
         }
 
         $('#results-geo-row0').parent().addClass('dg-api-geo-objects-selected');
@@ -87,8 +94,7 @@ DG.autoload(function () {
             $('#' + arr[ind].getAttribute('id')).parent().removeClass('dg-api-geo-objects-selected');
         }
         $(this).parent().addClass('dg-api-geo-objects-selected');
-        var geomId = geometries.length;
-        geomId = geomId - 1 - parseInt($(this).attr('id').substr(15));
+        var geomId = parseInt($(this).attr('id').substr(15));
         if (DG.WKTParser.getObjectType(geometries[geomId].wkt) == 'POINT' ) {
             var center = DG.WKTParser.getPoint(geometries[geomId].wkt).getPosition();
             myMap.setCenter(new DG.GeoPoint(center.lon,center.lat), 17);
