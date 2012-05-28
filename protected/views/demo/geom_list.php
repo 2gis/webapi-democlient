@@ -25,9 +25,9 @@ if (isset($geoms->response_code) && $geoms->response_code == 200): ?>
         <div class="results-content">
             <ul class="results-geo">
                 <?php foreach ($geoms->result as $key => $geom): ?>
-                <li class="dg-api-geo-objects-row" >
+                <li class="dg-api-geo-objects-row" id="results-geo-row<? echo $key; ?>">
                     <span class="results-icon <?php echo Helper::getGeoTypeIcon($geom->type) ?>"></span>
-                    <a href="javascript:void(0)" class="dg-api-geo-objects-title" id="results-geo-row<? echo $key; ?>"><?php echo $geom->name; ?></a>
+                    <a href="javascript:void(0)" class="dg-api-geo-objects-title"><?php echo $geom->name; ?></a>
                     <p class="dg-api-geo-objects-info"><?php echo Helper::getGeoTypeRussianName($geom->type); ?></p>
                 </li><!-- /row -->
                 <?php endforeach; ?>

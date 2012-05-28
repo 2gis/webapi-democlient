@@ -53,12 +53,10 @@ DG.autoload(function () {
             if (DG.WKTParser.getObjectType(geometries[i].wkt) == 'POINT') {
                 point = DG.WKTParser.getObject(geometries[i].wkt);
                 addMarker(myMap, point.getPosition(), geometries[i].name);
-                geometry = null;
             } else {
                 var geometry = DG.WKTParser.getObject(geometries[i].wkt);
                 myMap.geometries.add(geometry);
                 geometry.setStyle(style);
-
             }
         }
 
@@ -68,7 +66,7 @@ DG.autoload(function () {
             myMap.setBounds(geometry.getBounds());
         }
 
-        $('#results-geo-row0').parent().addClass('dg-api-geo-objects-selected');
+        $('#results-geo-row0').addClass('dg-api-geo-objects-selected');
     }
             
     $("h2.title").hover(
@@ -88,13 +86,10 @@ DG.autoload(function () {
         }
         );
 
-    $('a[id^="results-geo-row"]').click(function(){
-        var arr = $('a[id^="results-geo-row"]*').get();
-        for(var ind in arr) {
-            $('#' + arr[ind].getAttribute('id')).parent().removeClass('dg-api-geo-objects-selected');
-        }
-        $(this).parent().addClass('dg-api-geo-objects-selected');
-        var geomId = parseInt($(this).attr('id').substr(15));
+    $('.dg-api-geo-objects-row').click(function(){
+        $('.dg-api-geo-objects-row').removeClass('dg-api-geo-objects-selected');
+        $(this).addClass('dg-api-geo-objects-selected');
+        var geomId = $(this).attr('id').substr(15);
         if (DG.WKTParser.getObjectType(geometries[geomId].wkt) == 'POINT' ) {
             var center = DG.WKTParser.getPoint(geometries[geomId].wkt).getPosition();
             myMap.setCenter(new DG.GeoPoint(center.lon,center.lat), 17);
