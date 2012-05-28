@@ -48,21 +48,14 @@ DG.autoload(function () {
         style.fillColor = "#ee9900";
         style.fillOpacity = 0.2;
 
-        var lim = geometries.length - 1;
-        for(var i = lim; i > -1 ; i--) {
-            if (DG.WKTParser.getObjectType(geometries[i].wkt) == 'POINT') {
-                point = DG.WKTParser.getObject(geometries[i].wkt);
-                addMarker(myMap, point.getPosition(), geometries[i].name);
-            } else {
-                var geometry = DG.WKTParser.getObject(geometries[i].wkt);
-                myMap.geometries.add(geometry);
-                geometry.setStyle(style);
-            }
-        }
-
         if (DG.WKTParser.getObjectType(geometries[0].wkt) == 'POINT' ) {
+            var point = DG.WKTParser.getObject(geometries[0].wkt).getPosition();
+            addMarker(myMap, point, geometries[0].name);
             myMap.setCenter(new DG.GeoPoint(point.lon,point.lat), 17);
         } else {
+            var geometry = DG.WKTParser.getObject(geometries[0].wkt);
+            myMap.geometries.add(geometry);
+            geometry.setStyle(style);
             myMap.setBounds(geometry.getBounds());
         }
 
@@ -90,13 +83,17 @@ DG.autoload(function () {
         $('.dg-api-geo-objects-row').removeClass('dg-api-geo-objects-selected');
         $(this).addClass('dg-api-geo-objects-selected');
         var geomId = $(this).attr('id').substr(15);
+        myMap.geometries.removeAll();
+        myMap.markers.removeAll();
         if (DG.WKTParser.getObjectType(geometries[geomId].wkt) == 'POINT' ) {
-            var center = DG.WKTParser.getPoint(geometries[geomId].wkt).getPosition();
-            myMap.setCenter(new DG.GeoPoint(center.lon,center.lat), 17);
+            var point = DG.WKTParser.getObject(geometries[geomId].wkt).getPosition();
+            addMarker(myMap, point, geometries[geomId].name);
+            myMap.setCenter(new DG.GeoPoint(point.lon,point.lat), 17);
         } else {
             var geometry = DG.WKTParser.getObject(geometries[geomId].wkt);
+            myMap.geometries.add(geometry);
+            geometry.setStyle(style);
             myMap.setBounds(geometry.getBounds());
         }
-        myMap.redraw();
     });
 })
