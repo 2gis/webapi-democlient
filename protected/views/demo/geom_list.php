@@ -21,9 +21,9 @@ if (isset($geoms->response_code) && $geoms->response_code == 200): ?>
         </div><!-- /results-head -->
     <?php $this->endWidget();?>
  
-    <div class="results clearfix">
+    <div class="results clearfix  dg-api-geo-objects-results">
         <div class="results-content">
-            <ul class="results-geo">
+            <ul class="results-geo dg-api-geo-objects-list">
                 <?php foreach ($geoms->result as $key => $geom): ?>
                 <li class="dg-api-geo-objects-row" id="results-geo-row<? echo $key; ?>">
                     <span class="results-icon <?php echo Helper::getGeoTypeIcon($geom->type) ?>"></span>

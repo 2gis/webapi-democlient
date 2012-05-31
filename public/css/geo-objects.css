@@ -44,11 +44,11 @@
 .dg-api-geo-objects-results{
     padding-top: 20px;
 }
-.dg-api-geo-objects-results .results-content{
-    width: 433px;
+.dg-api-geo-objects-results .dg-api-geo-objects-list{
+    width: 500px;
 }
 .dg-api-geo-objects-results .results-sidebar{
-    width:470px;
+    width:308px;
 }
 .dg-api-geo-objects-results .results-map-wrapper{
     margin-bottom: 20px;
