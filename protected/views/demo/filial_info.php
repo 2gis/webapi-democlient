@@ -34,11 +34,14 @@
             <?php endif;?>
             <div class="advanced-info">
                 <?php if (isset($filial->firm_group) && $filial->firm_group->count > 1) :?>
-                    <div style="padding-bottom: 16px;">
+                    <div class="dg-api-firm-branches-link">
                         <?php echo CHtml::link(
-                            'Посмотреть все филиалы  [' . $filial->firm_group->count . ']',
-                            Yii::app()->controller->createUrl('demo/filials', array('firm_id' => $filial->firm_group->id))
-                        );?>
+                        '<span id="selection_index67" class="selection_index"></span>'.
+                            '<span class="dg-api-with-count-title">Посмотреть все филиалы</span><span class="dg-api-with-count-number">(' .
+                            $filial->firm_group->count . ')</span>',
+                        Yii::app()->controller->createUrl('demo/filials', array('firm_id' => $filial->firm_group->id)),
+                        array('class'=>'dg-api-with-count')
+                    );?>
                     </div>
                 <?php endif; ?>
                 <?php if ($fullAddress = Helper::getFullAddress($filial)) :?>
@@ -125,57 +128,36 @@
                         <?php endif;?>
                     <?php endforeach;?>
                 <?php endif;?>
-            <?php if(isset($filial->schedule)):
-                $schedule = Helper::getFullWorkingHours($filial->schedule, $days);
-                $whData = array();
-                foreach($schedule['from'] as $i=>$v) {
-                    if(!isset($whData[$schedule['days'][$i]])) {
-                        $whData[$schedule['days'][$i]] = '';
-                    } else {
-                        $whData[$schedule['days'][$i]] .= '&nbsp;';
-                    }
-                    $whData[$schedule['days'][$i]] .= preg_replace('|(\d{2}):(\d{2})|', '$1<sup>$2</sup>', $v) . '&ndash;';
-                    $whData[$schedule['days'][$i]] .= preg_replace('|(\d{2}):(\d{2})|', '$1<sup>$2</sup>', $schedule['to'][$i]);
-                }
-            ?>
-                <ul class="wh-info">
-                    <li class="wh-today">
-                        <div style="display: inline; position: relative; zoom: 1;">
-                            Сегодня <?php echo (isset($whData[$days[date('D')]]) ? $whData[$days[date('D')]] : 'не работает') ?>
-                            <a href="javascript:void(0)" class="show-weekly-wh pseudo">другие дни</a>
-                        </div>
-                        <div class="wh-icon"></div>
-                    </li>
-                    <li class="wh-week">
-                        <div style="display: inline; position: relative; zoom: 1;">
-                        <?php $i = 0; $cnt = count($whData); foreach($days as $dayId => $dayName):
-                            if(isset($whData[$dayName])):
-                                $i++;
-                                echo $dayName . ' ' . $whData[$dayName] . ($i < $cnt ? '; ' : ' ');
-                            endif;
-                        endforeach;
-                        if (isset($filial->schedule->comment)):
-                            echo ' (' . $filial->schedule->comment . ')';
-                        endif;?>
-                        <a href="javascript:void(0)" class="show-today-wh pseudo">сегодня</a>
-                        </div>
-                        <div class="wh-icon"></div>
-                    </li>
-                </ul>
-            <?php endif;?>
+                <?php if(isset($filial->schedule)):
+                    $this->widget('application.components.widgets.workingHours.WorkingHours', array('params' => array('filial_schedule' => $filial->schedule)));
+                endif;?>
+            <?php if (isset($filial->additional_info) || isset($filial->payoptions)): ?>
+            <ul class="dg-api-firm-attrs">
+                <?php if ( !empty($filial->additional_info->wifi) ||
+                !empty($filial->additional_info->avg_price) ||
+                !empty($filial->additional_info->business_lunch) ) :?>
 
-            <?php if(isset($filial->payoptions)) :?>
-                <ul class="payment-methods">
-                <?php $i = 0; $cnt = count($filial->payoptions); foreach ($filial->payoptions as $payoption): $i++;?>
-                    <?php if ($cnt == $i):?>
-                        <li style="position: relative;">
-                            <div class="<?php echo strtolower($payoption);?>-icon" title="<?php echo Helper::getPayoptionName($payoption)?>"></div>
-                        </li>
-                    <?php else:?>
-                        <li><div class="<?php echo strtolower($payoption);?>-icon" title="<?php echo Helper::getPayoptionName($payoption)?>"></div></li>
+                <li class="dg-api-firm-attrs-row">
+                    <?php if (!empty($filial->additional_info->wifi)) :?>
+                    <span>WiFi</span>
+                    <?php endif; ?>
+                    <?php if (!empty($filial->additional_info->business_lunch)) :?>
+                    <span>Бизнес-ланч</span>
+                    <?php endif; ?>
+                    <?php if (!empty($filial->additional_info->avg_price)) :?>
+                    <span><span>Средний чек <?=$filial->additional_info->avg_price?> </span><span class="dg-currency dg-currency-ru" classname="dg-currency dg-currency-ru">Р</span></span>
+                    <?php endif; ?>
+                </li>
+                <?php endif;
+                if (isset($filial->payoptions)): ?>
+                    <li class="dg-api-firm-attrs-row">
+
+                        <?php foreach ($filial->payoptions as $payoption): ?>
+                        <span><?=Helper::getPayoptionName($payoption)?></span>
+                        <?php endforeach; ?>
+                    </li>
                     <?php endif;?>
-                <?php endforeach; ?>
-                </ul>
+            </ul>
             <?php endif; ?>
             </div>
             <?php if((isset($filial->comment) && strlen($filial->comment) > 0) || (isset($filial->article) && strlen($filial->article) > 0)) :?>

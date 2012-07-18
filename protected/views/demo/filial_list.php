@@ -137,14 +137,23 @@
                 endif; ?>
             </ul>
             <?php if ($isSearchResult && isset($filial->firm_group) && $filial->firm_group->count > 1) :?>
-                <div class="firm-branches">
-                    <span style="position: relative; zoom: 1;">
-                        <?php echo CHtml::link(
-                            'Все филиалы',
-                            Yii::app()->controller->createUrl('demo/filials', array('firm_id' => $filial->firm_group->id))
-                        );?> (<?php echo $filial->firm_group->count?>)
-                    </span>
+            <div class="dg-api-firm-branches-link">
+                <?php echo CHtml::link(
+                '<span id="selection_index67" class="selection_index"></span>'.
+                    '<span class="dg-api-with-count-title">Все филиалы</span><span class="dg-api-with-count-number">(' .
+                    $filial->firm_group->count . ')</span>',
+                Yii::app()->controller->createUrl('demo/filials', array('firm_id' => $filial->firm_group->id)),
+                array('class'=>'dg-api-with-count')
+            );?>
+                <?php if($isFirstBranch):
+                $isFirstBranch = false; ?>
+                <div class="tooltip tooltip-rtl">
+                    <a href="javascript:void(0)" class="toggle" title="Подсказка"></a>
+                    <div class="arrow"></div>
+                    <div class="balloon">Если у компании есть <a href="<?php echo Yii::app()->controller->createUrl('demo/filials', array('firm_id' => $filial->firm_group->id))?>">филиалы</a>, на их полный список можно поставить ссылку.</div>
                 </div>
+                <?php endif;?>
+            </div>
             <?php endif; ?>
         </li>
     <?php endforeach; ?>

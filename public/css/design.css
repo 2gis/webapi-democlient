@@ -615,3 +615,78 @@ a {
     color:#969696;
     font-size: 12px;
 }
+.dg-api-firm-attrs {
+    overflow: hidden;
+}
+.dg-api-firm-attrs-row {
+    color: #666;
+    font-size: 12px;
+    padding-right: 5px;
+    line-height: 1.35em;
+    margin: 5px -5px;
+}
+.dg-api-firm-attrs-row > span {
+    display: inline-block;
+    padding: 0 5px;
+    *zoom: 1;
+    *display: inline-block;
+    background: url("../images/dg-online-sprite.png") -29px -117px  no-repeat;
+}
+.dg-currency {
+    background: url("../images/dg-online-sprite.png") no-repeat scroll -39px 1px transparent;
+    display: inline-block;
+    height: 13px;
+    overflow: hidden;
+    text-indent: 100%;
+    vertical-align: -3px;
+    *vertical-align: 0;
+    white-space: nowrap;
+    width: 13px;
+}
+.dg-currency-ru {
+    background-position: -39px 1px;
+}
+.dg-currency-it {
+    background-position: -39px -29px;
+}
+.dg-currency-us {
+    background-position: -39px -15px;
+}
+.dg-currency-kz {
+    background-position: -39px -44px;
+}
+.dg-currency-ua {
+    background-position: -39px -59px;
+}
+
+
+.dg-api-firm-branches-link{
+    font-size: 12px;
+    position: relative;
+    *zoom: 1;
+    *display: inline-block;
+}
+.dg-api-with-count{
+    text-decoration: none;
+}
+.dg-api-with-count-number{
+    text-decoration: none;
+    color: #666;
+    margin-left: 3px;
+}
+.dg-api-with-count-title{
+    text-decoration: underline;
+}
+.dg-api-with-count:hover .dg-api-with-count-title{
+    text-decoration: none;
+}
+.dg-api-firm-branches-link .tooltip-rtl{
+    top: -5px;
+    right: auto;
+    left: 105px;
+}
+
+.dg-api-firm-attrs-row  .tooltip-rtl{
+    position:relative;
+    top: 20px;
+}

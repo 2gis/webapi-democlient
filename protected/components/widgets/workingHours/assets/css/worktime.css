@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.dg-firm-schedule{
+    margin: 0 0 10px;
+}
+.dg-firm-schedule-clock{
+    background: #a9bbc9 url("../img/clock.png") no-repeat;
+    float: left;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 1;
+    /*margin: 3px 5px 0 17px;*/
+    margin: 1px 5px 0 0;
+}
+.dg-firm-schedule-clock.opened{
+    background-color: #7ac115;
+}
+.dg-firm-head .dg-firm-schedule-clock{
+    margin: 3px 4px 0 0;
+}
+.dg-firm-schedule-short{
+    overflow: hidden;
+    zoom: 1;
+    padding: 0 0 2px;
+    position: relative;
+}
+.dg-firm-schedule-24{
+    background-color: #7ac115;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+    padding: 2px 4px 3px;
+    color:#fff;
+    line-height: 1;
+    margin: 1px 5px 0 0;
+    font-size: 12px;
+}
+.dg-work-note{
+    font-size: 12px;
+}
+
+.dg-work-time{
+    color:#222;
+    cursor: pointer;
+    border-bottom: 1px dotted;
+}
+.dg-work-time:hover{
+    color:#444;
+    border-bottom-color: transparent;
+}
+.dg-work-time:active{
+    color:#000;
+    border-bottom-color: transparent;
+}
+
+.full-schedule{
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.dg-weekly-schedule{
+    display: none;
+    font-size: 12px;
+}
+.dg-work-info {
+    display: block;
+    font-size: 12px;
+    color: #8b8b8b;
+}
+
+.dg-icon-collapse,
+.dg-icon-expand {
+    background: url(../img/expander.png) no-repeat;
+    display: inline-block;
+    *display: inline; zoom: 1;
+    width: 5px;
+    height: 6px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 1;
+}
+.dg-icon-collapse {
+    background-position: 100% 0;
+}

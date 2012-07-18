@@ -180,5 +180,16 @@ class Helper
         
         return $typeName;
     }
+
+    /**
+     * @static
+     * @param string $json  - input raw json with
+     * @return string - output json with readable letters? links and slashes
+     */
+    public static function jsonPrettify($json) {
+        return stripcslashes(html_entity_decode(
+            preg_replace('/\\\\u([a-f0-9]{4})/i', '&#x$1;', html_entity_decode(urldecode($json))),
+            ENT_QUOTES, 'UTF-8'));
+    }
 }
 
